@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    size_t i = 0-1;
-    cout << i;
+    int x = MAX_INT;
+    cout << x;
     return 0;
 }
