@@ -5,7 +5,7 @@ vector<pair<int, pair<int, int> > > adjList;
 
 void bellman(int s, int n){
     vector<long long> dist(n, 1e12);
-    vector<int> pv(n, -1);
+    vector<int> prev(n, -1);
     dist[s] = 0;
     for (int i = 1; i <= n-1; ++i) {
         for (auto &p : adjList) {
@@ -13,7 +13,7 @@ void bellman(int s, int n){
             int a = p.second.first, b = p.second.second;
             if (dist[b] > dist[a] + w){
                 dist[b] = dist[a] + w;
-                pv[b] = a;
+                prev[b] = a;
             }
         }
     }
